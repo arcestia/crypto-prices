@@ -4,11 +4,14 @@
     "ethereum",
     "litecoin",
     "solana",
-    "cardano"
+    "cardano",
+    "xrp",
+    "bnb",
+    "tron",
+    "dogecoin",
+    "stellar",
+    "zcash",
+    "monero"
   ],
-  "vs_currency": "usd",
-  "extra_vs_currencies": [
-    "thb",
-    "eur"
-  ]
+  "vs_currency": "usd"
 }
