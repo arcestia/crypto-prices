@@ -1,6 +1,6 @@
 # Cardano (USD)
 
-![Cardano chart](graphs/cardano.png)
+![Cardano chart](./cardano.png)
 
 **Latest price:** `0.4149` USD  
 **24h change:** +0.69%

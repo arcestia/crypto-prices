@@ -1,6 +1,6 @@
 # Bitcoin (USD)
 
-![Bitcoin chart](graphs/bitcoin.png)
+![Bitcoin chart](./bitcoin.png)
 
 **Latest price:** `87,495` USD  
 **24h change:** +0.83%

@@ -2,7 +2,7 @@
 
 Auto-generated from history files. Prices in **USD** (primary vs_currency).
 
-Last updated (UTC): `2025-11-26 16:18 UTC`
+Last updated (UTC): `2025-11-26 16:23 UTC`
 
 ## Coins
 
