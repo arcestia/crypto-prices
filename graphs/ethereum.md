@@ -1,5 +1,7 @@
 # Ethereum (USD)
 
+![Ethereum chart](graphs/ethereum.png)
+
 **Latest price:** `2,942` USD  
 **24h change:** +1.73%
 

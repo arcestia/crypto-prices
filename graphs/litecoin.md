@@ -1,5 +1,7 @@
 # Litecoin (USD)
 
+![Litecoin chart](graphs/litecoin.png)
+
 **Latest price:** `84.11` USD  
 **24h change:** -0.60%
 

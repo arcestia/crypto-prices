@@ -1,5 +1,7 @@
 # Solana (USD)
 
+![Solana chart](graphs/solana.png)
+
 **Latest price:** `137.11` USD  
 **24h change:** +1.68%
 

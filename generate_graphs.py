@@ -2,6 +2,8 @@ import json
 import os
 from datetime import datetime
 
+import matplotlib.pyplot as plt
+
 import fetch_prices as fp
 
 
@@ -49,7 +51,7 @@ def format_price(value: float | int | None) -> str:
 
 
 def write_coin_markdown(coin: str, history: list[dict]) -> dict:
-    """Generate graphs/<coin>.md markdown and return summary info."""
+    """Generate graphs/<coin>.png and graphs/<coin>.md markdown, return summary info."""
     ensure_graphs_dir()
 
     coin_name = coin.replace("-", " ").title()
@@ -58,6 +60,41 @@ def write_coin_markdown(coin: str, history: list[dict]) -> dict:
     lines: list[str] = []
     lines.append(f"# {coin_name} ({symbol_currency})")
     lines.append("")
+
+    # If we have at least 2 points, generate a PNG chart
+    if len(history) >= 2:
+        timestamps = []
+        prices = []
+        for entry in history:
+            ts_raw = entry.get("timestamp")
+            try:
+                ts = datetime.fromisoformat(ts_raw.replace("Z", "+00:00"))
+                timestamps.append(ts)
+                prices.append(float(entry.get("price")))
+            except Exception:
+                continue
+
+        if len(timestamps) >= 2 and len(prices) >= 2:
+            plt.style.use("dark_background")
+            fig, ax = plt.subplots(figsize=(6, 3))
+
+            ax.plot(timestamps, prices, marker="o", linewidth=1.5, color="#60a5fa")
+            ax.set_title(f"{coin_name} price in {symbol_currency}")
+            ax.set_xlabel("Time")
+            ax.set_ylabel(f"Price ({symbol_currency})")
+            fig.autofmt_xdate(rotation=30)
+            ax.grid(alpha=0.3)
+
+            ensure_graphs_dir()
+            png_path = os.path.join(GRAPHS_DIR, f"{coin}.png")
+            fig.tight_layout()
+            fig.savefig(png_path, dpi=120)
+            plt.close(fig)
+
+            # Embed image in markdown (relative path from repo root)
+            rel_png_path = f"{GRAPHS_DIR}/{coin}.png"
+            lines.append(f"![{coin_name} chart]({rel_png_path})")
+            lines.append("")
 
     latest = history[-1] if history else None
     if latest:
