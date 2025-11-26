@@ -1,6 +1,7 @@
 {
   "coins": [
     "bitcoin",
+    "bitcoin-cash",
     "ethereum",
     "litecoin",
     "solana",
@@ -9,6 +10,7 @@
     "binancecoin",
     "tron",
     "dogecoin",
+    "shiba-inu",
     "stellar",
     "zcash",
     "monero",
