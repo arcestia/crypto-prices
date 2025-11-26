@@ -24,8 +24,8 @@ README_FILE = "README.md"
 START_MARKER = "<!-- PRICE_TABLE_START -->"
 END_MARKER = "<!-- PRICE_TABLE_END -->"
 
-# Local history file for basic trend tracking
-PRICE_HISTORY_FILE = "price_history.json"
+# Directory for per-coin history files
+HISTORY_DIR = "history"
 
 
 def load_config():
@@ -100,34 +100,41 @@ def save_json(data, path="prices.json"):
         json.dump(payload, f, indent=2)
 
 
-def load_price_history():
-    """Load previous price data for trend calculation."""
-    if os.path.exists(PRICE_HISTORY_FILE):
+def ensure_history_dir():
+    """Ensure the history directory exists."""
+    os.makedirs(HISTORY_DIR, exist_ok=True)
+
+
+def load_coin_history(coin: str):
+    """Load history list for a single coin from history/<coin>.json."""
+    ensure_history_dir()
+    path = os.path.join(HISTORY_DIR, f"{coin}.json")
+    if os.path.exists(path):
         try:
-            with open(PRICE_HISTORY_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data if isinstance(data, list) else []
         except (json.JSONDecodeError, FileNotFoundError):
-            return {}
-    return {}
+            return []
+    return []
 
 
 def save_price_history(prices):
-    """Save current prices to history file, keeping only the last 10 entries per coin."""
+    """Save current prices to per-coin history files, keeping only the last 10 entries."""
     if not prices:
         return
 
-    history = load_price_history()
+    ensure_history_dir()
     timestamp = datetime.utcnow().isoformat()
 
     for coin, data in prices.items():
-        if coin not in history:
-            history[coin] = []
+        history = load_coin_history(coin)
 
         # Keep only last 10 entries to avoid file bloat
-        if len(history[coin]) >= 10:
-            history[coin] = history[coin][-9:]
+        if len(history) >= 10:
+            history = history[-9:]
 
-        history[coin].append(
+        history.append(
             {
                 "timestamp": timestamp,
                 "price": data.get(VS_CURRENCY, 0),
@@ -135,8 +142,9 @@ def save_price_history(prices):
             }
         )
 
-    with open(PRICE_HISTORY_FILE, "w", encoding="utf-8") as f:
-        json.dump(history, f, indent=2)
+        path = os.path.join(HISTORY_DIR, f"{coin}.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=2)
 
 
 def get_trend_indicator(change_24h):
