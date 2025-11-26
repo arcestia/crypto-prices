@@ -11,7 +11,9 @@
     "dogecoin",
     "stellar",
     "zcash",
-    "monero"
+    "monero",
+    "aave",
+    "the-open-network"
   ],
   "vs_currency": "usd"
 }
