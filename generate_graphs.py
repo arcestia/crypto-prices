@@ -91,8 +91,8 @@ def write_coin_markdown(coin: str, history: list[dict]) -> dict:
             fig.savefig(png_path, dpi=120)
             plt.close(fig)
 
-            # Embed image in markdown (relative path from repo root)
-            rel_png_path = f"{GRAPHS_DIR}/{coin}.png"
+            # Embed image in markdown (relative to graphs/<coin>.md)
+            rel_png_path = f"./{coin}.png"
             lines.append(f"![{coin_name} chart]({rel_png_path})")
             lines.append("")
 
