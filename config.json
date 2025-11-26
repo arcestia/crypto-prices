@@ -1,0 +1,14 @@
+{
+  "coins": [
+    "bitcoin",
+    "ethereum",
+    "litecoin",
+    "solana",
+    "cardano"
+  ],
+  "vs_currency": "usd",
+  "extra_vs_currencies": [
+    "thb",
+    "eur"
+  ]
+}
