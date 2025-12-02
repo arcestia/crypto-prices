@@ -1,70 +1,70 @@
 {
-  "updated_at_utc": "2025-12-02T21:44:17.760561+00:00",
+  "updated_at_utc": "2025-12-02T21:53:07.838689+00:00",
   "vs_currency": "usd",
   "prices": {
     "aave": {
-      "usd": 187.42,
-      "usd_24h_change": 11.19407100141063
+      "usd": 187.12,
+      "usd_24h_change": 11.24880158403346
     },
     "binancecoin": {
-      "usd": 876.75,
-      "usd_24h_change": 6.380046975837986
+      "usd": 877.62,
+      "usd_24h_change": 6.753575363305125
     },
     "bitcoin": {
-      "usd": 91458,
-      "usd_24h_change": 5.894911009014637
+      "usd": 91567,
+      "usd_24h_change": 5.949127917229716
     },
     "bitcoin-cash": {
-      "usd": 552.84,
-      "usd_24h_change": 6.047154325242082
+      "usd": 551.32,
+      "usd_24h_change": 5.775775912398993
     },
     "cardano": {
-      "usd": 0.437149,
-      "usd_24h_change": 14.452576031950882
+      "usd": 0.436922,
+      "usd_24h_change": 14.77610334956646
     },
     "dogecoin": {
-      "usd": 0.145573,
-      "usd_24h_change": 7.692241964500202
+      "usd": 0.145713,
+      "usd_24h_change": 7.875314527138697
     },
     "ethereum": {
-      "usd": 2988.63,
-      "usd_24h_change": 6.9444787253626545
+      "usd": 2992.04,
+      "usd_24h_change": 7.324711735873282
     },
     "litecoin": {
-      "usd": 82.96,
-      "usd_24h_change": 7.363003099845086
+      "usd": 83.02,
+      "usd_24h_change": 7.564088993956748
     },
     "monero": {
-      "usd": 408.23,
-      "usd_24h_change": 1.434942446765655
+      "usd": 408.09,
+      "usd_24h_change": 1.6411067183565609
     },
     "ripple": {
       "usd": 2.17,
-      "usd_24h_change": 6.4198516559619705
+      "usd_24h_change": 7.122954741610271
     },
     "shiba-inu": {
       "usd": 8.48e-06,
-      "usd_24h_change": 5.8605196817682765
+      "usd_24h_change": 5.838040757882671
     },
     "solana": {
       "usd": 138.83,
-      "usd_24h_change": 10.324442563415898
+      "usd_24h_change": 10.308631447265922
     },
     "stellar": {
-      "usd": 0.255813,
-      "usd_24h_change": 9.155930734263604
+      "usd": 0.255919,
+      "usd_24h_change": 9.518583979770836
     },
     "the-open-network": {
       "usd": 1.58,
-      "usd_24h_change": 4.778356326046913
+      "usd_24h_change": 4.851655365468276
     },
     "tron": {
-      "usd": 0.281538,
-      "usd_24h_change": 1.31699264514021
+      "usd": 0.28159,
+      "usd_24h_change": 1.3222955964597862
     },
     "zcash": {
-      "usd": 312.5,
-      "usd_24h_change": -8.713953401692814
+      "usd": 309.6,
+      "usd_24h_change": -9.213343177186918
     }
   }
 }
