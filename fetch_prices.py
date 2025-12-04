@@ -68,6 +68,8 @@ def load_config():
 
 def all_vs_currencies():
     """Return list of all vs-currencies to request from the API."""
+    if not VS_CURRENCY:
+        return []
     currencies = [VS_CURRENCY]
     for cur in EXTRA_VS_CURRENCIES:
         if cur not in currencies:
@@ -101,6 +103,9 @@ def fetch_markets_changes():
         f"{VS_CURRENCY}_30d_change": pct,
         f"{VS_CURRENCY}_1y_change": pct }
     """
+    if not VS_CURRENCY or not COINS:
+        return {}
+
     params = {
         "vs_currency": VS_CURRENCY,
         "ids": ",".join(COINS),
@@ -455,6 +460,10 @@ def generate_html(prices_payload, path="index.html"):
 
 
 def main():
+    # Load configuration (required). Abort if invalid.
+    if not load_config():
+        return
+
     # Fetch primary currency changes via markets API
     market_changes = fetch_markets_changes()
     # Fetch simple prices for extra currencies and to keep prices.json compatible
