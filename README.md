@@ -1,4 +1,4 @@
-# Live Cryptocurrency Prices
+# Crypto Prices
 
 <!-- PRICE_TABLE_START -->
 
