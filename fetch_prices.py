@@ -5,7 +5,8 @@ from datetime import datetime, timezone
 import requests
 
 
-API_URL = "https://api.coingecko.com/api/v3/simple/price"
+API_SIMPLE_URL = "https://api.coingecko.com/api/v3/simple/price"
+API_MARKETS_URL = "https://api.coingecko.com/api/v3/coins/markets"
 
 # Optional external configuration file
 CONFIG_FILE = "config.json"
@@ -75,19 +76,60 @@ def all_vs_currencies():
 
 
 def fetch_prices():
-    """Fetch prices (and 24h change) for all configured coins from CoinGecko."""
+    """Fetch current prices for all configured vs-currencies (simple API)."""
     params = {
         "ids": ",".join(COINS),
         "vs_currencies": ",".join(all_vs_currencies()),
         "include_24hr_change": "true",
     }
     try:
-        response = requests.get(API_URL, params=params, timeout=30)
+        response = requests.get(API_SIMPLE_URL, params=params, timeout=30)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
         print(f"Error fetching prices from API: {e}")
         return None
+
+
+def fetch_markets_changes():
+    """Fetch 24h, 7d, 30d, 1y change percentages and current price for the primary vs-currency using markets API.
+
+    Returns a dict keyed by coin id with fields:
+      { VS_CURRENCY: current_price,
+        f"{VS_CURRENCY}_24h_change": pct,
+        f"{VS_CURRENCY}_7d_change": pct,
+        f"{VS_CURRENCY}_30d_change": pct,
+        f"{VS_CURRENCY}_1y_change": pct }
+    """
+    params = {
+        "vs_currency": VS_CURRENCY,
+        "ids": ",".join(COINS),
+        "order": "market_cap_desc",
+        "per_page": len(COINS) or 1,
+        "page": 1,
+        "sparkline": "false",
+        "price_change_percentage": "24h,7d,30d,1y",
+    }
+    try:
+        resp = requests.get(API_MARKETS_URL, params=params, timeout=30)
+        resp.raise_for_status()
+        arr = resp.json()
+        out = {}
+        for item in arr:
+            cid = item.get("id")
+            if not cid:
+                continue
+            out[cid] = {
+                VS_CURRENCY: item.get("current_price"),
+                f"{VS_CURRENCY}_24h_change": item.get("price_change_percentage_24h_in_currency"),
+                f"{VS_CURRENCY}_7d_change": item.get("price_change_percentage_7d_in_currency"),
+                f"{VS_CURRENCY}_30d_change": item.get("price_change_percentage_30d_in_currency"),
+                f"{VS_CURRENCY}_1y_change": item.get("price_change_percentage_1y_in_currency"),
+            }
+        return out
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching markets changes from API: {e}")
+        return {}
 
 
 def save_json(data, path="prices.json"):
@@ -199,7 +241,10 @@ def generate_enhanced_table(prices, coin_ids):
 <tr>
 <th align="left">🪙 Cryptocurrency</th>
 <th align="right">💵 Price ({VS_CURRENCY.upper()})</th>
-<th align="right">📊 24h Change</th>
+<th align="right">📊 24h</th>
+<th align="right">📆 7d</th>
+<th align="right">📅 30d</th>
+<th align="right">📈 1y</th>
 <th align="center">📈 Trend</th>
 <th align="center">🎯 Status</th>
 </tr>
@@ -207,12 +252,18 @@ def generate_enhanced_table(prices, coin_ids):
 <tbody>
 """
 
-    change_key = f"{VS_CURRENCY}_24h_change"
+    change_key_24h = f"{VS_CURRENCY}_24h_change"
+    change_key_7d = f"{VS_CURRENCY}_7d_change"
+    change_key_30d = f"{VS_CURRENCY}_30d_change"
+    change_key_1y = f"{VS_CURRENCY}_1y_change"
 
     for coin in coin_ids:
         coin_data = prices.get(coin, {})
         price = coin_data.get(VS_CURRENCY)
-        change_24h = coin_data.get(change_key, 0)
+        change_24h = coin_data.get(change_key_24h, 0)
+        change_7d = coin_data.get(change_key_7d, 0)
+        change_30d = coin_data.get(change_key_30d, 0)
+        change_1y = coin_data.get(change_key_1y, 0)
 
         coin_name = coin.replace("-", " ").title()
 
@@ -224,8 +275,27 @@ def generate_enhanced_table(prices, coin_ids):
             else:
                 price_str = f"${price:.4f}"
 
-            change_str = f"{change_24h:+.2f}%" if change_24h else "0.00%"
-            change_color = "#00ff00" if change_24h and change_24h > 0 else "#ff0000" if change_24h and change_24h < 0 else "#888888"
+            def pct_str(x):
+                try:
+                    return f"{float(x):+.2f}%"
+                except (TypeError, ValueError):
+                    return "0.00%"
+
+            def pct_color(x):
+                try:
+                    val = float(x)
+                except (TypeError, ValueError):
+                    val = 0
+                return "#00ff00" if val > 0 else "#ff0000" if val < 0 else "#888888"
+
+            change_str = pct_str(change_24h)
+            change_color = pct_color(change_24h)
+            change7_str = pct_str(change_7d)
+            change7_color = pct_color(change_7d)
+            change30_str = pct_str(change_30d)
+            change30_color = pct_color(change_30d)
+            change1y_str = pct_str(change_1y)
+            change1y_color = pct_color(change_1y)
 
             trend_emoji, _trend_color = get_trend_indicator(change_24h)
 
@@ -243,6 +313,9 @@ def generate_enhanced_table(prices, coin_ids):
 <td><strong>{coin_name}</strong></td>
 <td align="right"><code>{price_str}</code></td>
 <td align="right" style="color: {change_color}"><strong>{change_str}</strong></td>
+<td align="right" style="color: {change7_color}"><strong>{change7_str}</strong></td>
+<td align="right" style="color: {change30_color}"><strong>{change30_str}</strong></td>
+<td align="right" style="color: {change1y_color}"><strong>{change1y_str}</strong></td>
 <td align="center">{trend_emoji}</td>
 <td align="center">{status}</td>
 </tr>
@@ -253,6 +326,9 @@ def generate_enhanced_table(prices, coin_ids):
 <td><strong>{coin_name}</strong></td>
 <td align="right"><code>N/A</code></td>
 <td align="right">--</td>
+<td align="right">--</td>
+<td align="right">--</td>
+<td align="right">--</td>
 <td align="center">❓</td>
 <td align="center">⚠️ ERROR</td>
 </tr>
@@ -261,9 +337,9 @@ def generate_enhanced_table(prices, coin_ids):
     total_coins = len([c for c in coin_ids if prices.get(c, {}).get(VS_CURRENCY)])
     avg_change = sum(
         [
-            prices.get(c, {}).get(change_key, 0)
+            prices.get(c, {}).get(change_key_24h, 0)
             for c in coin_ids
-            if prices.get(c, {}).get(change_key) is not None
+            if prices.get(c, {}).get(change_key_24h) is not None
         ]
     ) / max(1, total_coins)
 
@@ -379,22 +455,28 @@ def generate_html(prices_payload, path="index.html"):
 
 
 def main():
-    # Load configuration (required). Abort if invalid.
-    if not load_config():
-        return
+    # Fetch primary currency changes via markets API
+    market_changes = fetch_markets_changes()
+    # Fetch simple prices for extra currencies and to keep prices.json compatible
+    simple_prices = fetch_prices()
 
-    prices = fetch_prices()
-
-    if not prices:
+    if not simple_prices and not market_changes:
         print("❌ Failed to fetch price data")
         return
 
+    # Merge market_changes into simple_prices structure under each coin
+    merged = simple_prices if isinstance(simple_prices, dict) else {}
+    for coin in COINS:
+        merged.setdefault(coin, {})
+        for k, v in (market_changes.get(coin, {}) or {}).items():
+            merged[coin][k] = v
+
     # Save history and JSON snapshot
-    save_price_history(prices)
-    save_json(prices)
+    save_price_history(merged)
+    save_json(merged)
 
     # Build enhanced table for README and update between markers
-    table_content = generate_enhanced_table(prices, COINS)
+    table_content = generate_enhanced_table(merged, COINS)
     update_readme(table_content)
 
     # Load payload and generate HTML page as before
