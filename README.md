@@ -23,66 +23,66 @@
 
 <tr>
 <td><strong>Bitcoin</strong></td>
-<td align="right"><code>$85,379</code></td>
-<td align="right" style="color: #ff0000"><strong>-0.76%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-6.85%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-7.97%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-15.54%</strong></td>
+<td align="right"><code>$85,398</code></td>
+<td align="right" style="color: #ff0000"><strong>-0.94%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-6.83%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-7.95%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-15.52%</strong></td>
 <td align="center">📉</td>
 <td align="center">⚡ STABLE</td>
 </tr>
 
 <tr>
 <td><strong>Bitcoin Cash</strong></td>
-<td align="right"><code>$570.92</code></td>
-<td align="right" style="color: #00ff00"><strong>+4.63%</strong></td>
-<td align="right" style="color: #00ff00"><strong>+0.74%</strong></td>
-<td align="right" style="color: #00ff00"><strong>+9.17%</strong></td>
-<td align="right" style="color: #00ff00"><strong>+17.67%</strong></td>
+<td align="right"><code>$567.93</code></td>
+<td align="right" style="color: #00ff00"><strong>+4.03%</strong></td>
+<td align="right" style="color: #00ff00"><strong>+0.21%</strong></td>
+<td align="right" style="color: #00ff00"><strong>+8.60%</strong></td>
+<td align="right" style="color: #00ff00"><strong>+17.06%</strong></td>
 <td align="center">📈</td>
 <td align="center">🔥 HOT</td>
 </tr>
 
 <tr>
 <td><strong>Ethereum</strong></td>
-<td align="right"><code>$2,822</code></td>
-<td align="right" style="color: #00ff00"><strong>+0.13%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-12.52%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-9.63%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-23.54%</strong></td>
-<td align="center">📈</td>
-<td align="center">✅ UP</td>
-</tr>
-
-<tr>
-<td><strong>Litecoin</strong></td>
-<td align="right"><code>$74.53</code></td>
-<td align="right" style="color: #ff0000"><strong>-1.36%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-9.41%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-21.54%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-32.11%</strong></td>
+<td align="right"><code>$2,823</code></td>
+<td align="right" style="color: #ff0000"><strong>-0.33%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-12.48%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-9.59%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-23.50%</strong></td>
 <td align="center">📉</td>
 <td align="center">⚡ STABLE</td>
 </tr>
 
 <tr>
+<td><strong>Litecoin</strong></td>
+<td align="right"><code>$74.31</code></td>
+<td align="right" style="color: #ff0000"><strong>-2.08%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-9.67%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-21.76%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-32.31%</strong></td>
+<td align="center">📉</td>
+<td align="center">❄️ COLD</td>
+</tr>
+
+<tr>
 <td><strong>Solana</strong></td>
-<td align="right"><code>$119.48</code></td>
-<td align="right" style="color: #ff0000"><strong>-2.39%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-12.84%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-15.66%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-42.32%</strong></td>
+<td align="right"><code>$119.33</code></td>
+<td align="right" style="color: #ff0000"><strong>-2.88%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-12.95%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-15.77%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-42.39%</strong></td>
 <td align="center">📉</td>
 <td align="center">❄️ COLD</td>
 </tr>
 
 <tr>
 <td><strong>Cardano</strong></td>
-<td align="right"><code>$0.3544</code></td>
-<td align="right" style="color: #ff0000"><strong>-3.17%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-16.07%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-25.90%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-63.87%</strong></td>
+<td align="right"><code>$0.3535</code></td>
+<td align="right" style="color: #ff0000"><strong>-3.80%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-16.29%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-26.10%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-63.97%</strong></td>
 <td align="center">📉</td>
 <td align="center">❄️ COLD</td>
 </tr>
@@ -90,98 +90,98 @@
 <tr>
 <td><strong>Ripple</strong></td>
 <td align="right"><code>$1.82</code></td>
-<td align="right" style="color: #ff0000"><strong>-2.25%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-10.20%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-18.33%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-22.18%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-2.72%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-10.35%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-18.47%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-22.31%</strong></td>
 <td align="center">📉</td>
 <td align="center">❄️ COLD</td>
 </tr>
 
 <tr>
 <td><strong>Binancecoin</strong></td>
-<td align="right"><code>$828.64</code></td>
-<td align="right" style="color: #ff0000"><strong>-1.18%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-5.93%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-11.24%</strong></td>
-<td align="right" style="color: #00ff00"><strong>+19.17%</strong></td>
+<td align="right"><code>$828.87</code></td>
+<td align="right" style="color: #ff0000"><strong>-1.46%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-5.90%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-11.22%</strong></td>
+<td align="right" style="color: #00ff00"><strong>+19.21%</strong></td>
 <td align="center">📉</td>
 <td align="center">⚡ STABLE</td>
 </tr>
 
 <tr>
 <td><strong>Tron</strong></td>
-<td align="right"><code>$0.2792</code></td>
-<td align="right" style="color: #00ff00"><strong>+0.07%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-0.56%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-4.21%</strong></td>
-<td align="right" style="color: #00ff00"><strong>+7.69%</strong></td>
-<td align="center">📈</td>
-<td align="center">✅ UP</td>
-</tr>
-
-<tr>
-<td><strong>Dogecoin</strong></td>
-<td align="right"><code>$0.1234</code></td>
-<td align="right" style="color: #ff0000"><strong>-1.81%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-11.94%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-23.65%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-65.63%</strong></td>
+<td align="right"><code>$0.2791</code></td>
+<td align="right" style="color: #ff0000"><strong>-0.13%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-0.60%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-4.24%</strong></td>
+<td align="right" style="color: #00ff00"><strong>+7.65%</strong></td>
 <td align="center">📉</td>
 <td align="center">⚡ STABLE</td>
 </tr>
 
 <tr>
+<td><strong>Dogecoin</strong></td>
+<td align="right"><code>$0.1232</code></td>
+<td align="right" style="color: #ff0000"><strong>-2.35%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-12.11%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-23.79%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-65.70%</strong></td>
+<td align="center">📉</td>
+<td align="center">❄️ COLD</td>
+</tr>
+
+<tr>
 <td><strong>Shiba Inu</strong></td>
 <td align="right"><code>$0.0000</code></td>
-<td align="right" style="color: #ff0000"><strong>-5.28%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-16.08%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-19.69%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-70.78%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-5.78%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-16.32%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-19.92%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-70.86%</strong></td>
 <td align="center">💥</td>
 <td align="center">❄️ COLD</td>
 </tr>
 
 <tr>
 <td><strong>Stellar</strong></td>
-<td align="right"><code>$0.2074</code></td>
-<td align="right" style="color: #ff0000"><strong>-1.22%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-14.74%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-19.67%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-48.08%</strong></td>
+<td align="right"><code>$0.2071</code></td>
+<td align="right" style="color: #ff0000"><strong>-1.83%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-14.85%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-19.78%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-48.15%</strong></td>
 <td align="center">📉</td>
 <td align="center">⚡ STABLE</td>
 </tr>
 
 <tr>
 <td><strong>Zcash</strong></td>
-<td align="right"><code>$396.54</code></td>
-<td align="right" style="color: #00ff00"><strong>+5.17%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-14.32%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-37.24%</strong></td>
-<td align="right" style="color: #00ff00"><strong>+666.30%</strong></td>
-<td align="center">🚀</td>
+<td align="right"><code>$395.47</code></td>
+<td align="right" style="color: #00ff00"><strong>+4.35%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-14.55%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-37.41%</strong></td>
+<td align="right" style="color: #00ff00"><strong>+664.25%</strong></td>
+<td align="center">📈</td>
 <td align="center">🔥 HOT</td>
 </tr>
 
 <tr>
 <td><strong>Monero</strong></td>
-<td align="right"><code>$413.23</code></td>
-<td align="right" style="color: #ff0000"><strong>-1.97%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-0.29%</strong></td>
-<td align="right" style="color: #00ff00"><strong>+2.24%</strong></td>
-<td align="right" style="color: #00ff00"><strong>+92.62%</strong></td>
+<td align="right"><code>$413.70</code></td>
+<td align="right" style="color: #ff0000"><strong>-1.88%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-0.18%</strong></td>
+<td align="right" style="color: #00ff00"><strong>+2.36%</strong></td>
+<td align="right" style="color: #00ff00"><strong>+92.84%</strong></td>
 <td align="center">📉</td>
 <td align="center">⚡ STABLE</td>
 </tr>
 
 <tr>
 <td><strong>Aave</strong></td>
-<td align="right"><code>$174.09</code></td>
-<td align="right" style="color: #ff0000"><strong>-2.28%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-11.05%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-1.48%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-51.15%</strong></td>
+<td align="right"><code>$174.19</code></td>
+<td align="right" style="color: #ff0000"><strong>-2.54%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-11.00%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-1.42%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-51.12%</strong></td>
 <td align="center">📉</td>
 <td align="center">❄️ COLD</td>
 </tr>
@@ -189,10 +189,10 @@
 <tr>
 <td><strong>The Open Network</strong></td>
 <td align="right"><code>$1.44</code></td>
-<td align="right" style="color: #ff0000"><strong>-1.37%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-11.76%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-19.36%</strong></td>
-<td align="right" style="color: #ff0000"><strong>-73.28%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-1.85%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-11.97%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-19.55%</strong></td>
+<td align="right" style="color: #ff0000"><strong>-73.34%</strong></td>
 <td align="center">📉</td>
 <td align="center">⚡ STABLE</td>
 </tr>
@@ -202,8 +202,8 @@
 
 ---
 
-**📊 Market Summary:** 16/16 coins tracked | **📈 Avg 24h Change:** -0.94%  
-**🕐 Last Updated:** 2025-12-18 22:15 UTC | **🔄 Auto-updates every ~5 minutes**
+**📊 Market Summary:** 16/16 coins tracked | **📈 Avg 24h Change:** -1.39%  
+**🕐 Last Updated:** 2025-12-18 22:30 UTC | **🔄 Auto-updates every ~5 minutes**
 
 *Data provided by [CoinGecko API](https://www.coingecko.com/en/api) 🦎*
 
